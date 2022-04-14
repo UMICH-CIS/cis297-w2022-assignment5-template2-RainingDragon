@@ -23,7 +23,77 @@ namespace CalculatorGUI
         }
     }
 }
+private void ValueApplied(string value)
+{
+    if (!tester)
+    {
+        if (userNum1 != null && userNum1.ToString()[0] == '0' && !userNum1.ToString().Contains("."))
+            userNum1.Clear();
+        if (userNum1 == null)
+            userNum1 = new StringBuilder();
 
+        userNum1.Append(value);
+        consoleLog.Text = userNum1.ToString();
+    }
+    else
+    {
+        if (userNum2 != null && userNum2.ToString()[0] == '0' && !userNum2.ToString().Contains("."))
+            userNum2.Clear();
+        if (userNum2 == null)
+            userNum2 = new StringBuilder();
+        userNum2.Append(value);
+        consoleLog.Text = userNum2.ToString();
+    }
+}
+//numbers pressed
+private void ZeroPress(object sent, EventArgs e)
+{
+    ValueApplied("0");
+}
+private void OnePress(object sent, EventArgs e)
+{
+    ValueApplied("1");
+}
+
+private void TwoPress(object sent, EventArgs e)
+{
+    ValueApplied("2");
+}
+
+private void ThreePress(object sent, EventArgs e)
+{
+    ValueApplied("3");
+}
+
+private void FourPress(object sent, EventArgs e)
+{
+    ValueApplied("4");
+}
+
+private void FivePress(object sent, EventArgs e)
+{
+    ValueApplied("5");
+}
+
+private void SixPress(object sent, EventArgs e)
+{
+    ValueApplied("6");
+}
+
+private void SevenPress(object sent, EventArgs e)
+{
+    ValueApplied("7");
+}
+
+private void EightPress(object sent, EventArgs e)
+{
+    ValueApplied("8");
+}
+
+private void NinePress(object sent, EventArgs e)
+{
+    ValueApplied("9");
+}
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *
