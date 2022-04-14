@@ -11,11 +11,17 @@ namespace CalculatorGUI
 {
    public partial class CalculatorGUIForm : Form
    {
-      public CalculatorGUIForm()
-      {
-         InitializeComponent();
-      }
-   }
+        private StringBuilder userNum1;
+        private StringBuilder userNum2;
+        private bool tester;
+        private string oper;
+        private double result;
+        public CalculatorGUIForm()
+        {
+            tester = false;
+            InitializeComponent();
+        }
+    }
 }
 
 /**************************************************************************
