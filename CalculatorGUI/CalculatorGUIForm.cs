@@ -94,6 +94,69 @@ private void NinePress(object sent, EventArgs e)
 {
     ValueApplied("9");
 }
+//operations pressed
+private void OperApplied(string operationValue) //after operation is applied change console back to 0
+{
+    oper = operationValue;
+    tester = !tester;
+    consoleLog.Text = "0";
+}
+
+private void PlusPress(object sent, EventArgs e)
+{
+    OperApplied("+");
+}
+
+private void MinusPress(object sent, EventArgs e)
+{
+    OperApplied("-");
+}
+
+private void DividePress(object sent, EventArgs e)
+{
+    OperApplied("/");
+}
+
+private void ProductPress(object sent, EventArgs e)
+{
+    OperApplied("*");
+}
+
+private void EqualPress(object sent, EventArgs e)
+{
+    switch (oper)
+    {
+        case "+": //if plus then execute opersum
+            OperSum();
+            break;
+        case "-": //if minus then execute opersub
+            OperSub();
+            break;
+        case "/": //if divide then execute operdiv
+            OperDiv();
+            break;
+        case "*": //if multiply then execute operprod
+            OperProd();
+            break;
+    }
+}
+private void SquarePress(object sent, EventArgs e)
+{
+    OperSq(!tester ? userNum1 : userNum2);
+}
+private void LogPress(object sent, EventArgs e)
+{
+    OperLog(!tester ? userNum1 : userNum2, 10);
+}
+private void SignChangePress(object sent, EventArgs e)
+{
+    ChangeSign(!tester ? userNum1 : userNum2);
+}
+private void InversePress(object sent, EventArgs e)
+{
+    OperInv(!tester ? userNum1 : userNum2);
+}
+
 /**************************************************************************
  * (C) Copyright 1992-2017 by Deitel & Associates, Inc. and               *
  * Pearson Education, Inc. All Rights Reserved.                           *
